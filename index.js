@@ -1,8 +1,8 @@
 import data from './data/chuvaDeMeteoro.js'
-console.log('Chuva de meteoros')
-console.log(data)
+import {filtroChuvaHoje, filtroChuvaProximosMeses} from './services/filtrosChuvaDeMeteoro.js'
 
-const dataAtual = new Date();
+const chuvasHoje = data.filter(filtroChuvaHoje);
+const chuvasProximos2Meses = data.filter(filtroChuvaProximosMeses);
 
-console.log("Dia", dataAtual.getDay())
-console.log("mes", dataAtual.getMonth())
+console.log(chuvasHoje.length)
+console.log(chuvasProximos2Meses.length)

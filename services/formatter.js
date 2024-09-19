@@ -1,16 +1,15 @@
-function addZeroLeft(data){
-    console.log(data)
-    return data.length > 1 ? data : `0${data}`;
+function addZeroLeft(data) {
+    return String(data).length > 1 ? data : `0${data}`;
 }
 
-function formatterData(data, format){
-    const day = data.getDay();
-    const month = data.getMonth();
+function formatterData(data, format) {
+    const day = data.getDate();
+    const month = data.getMonth() + 1;
     const year = data.getFullYear();
-    
+
     let formatted = '';
-    
-    switch(format){
+
+    switch (format) {
         case 'MM/DD':
             formatted = `${addZeroLeft(month)}/${addZeroLeft(day)}`
             break;
@@ -22,5 +21,7 @@ function formatterData(data, format){
     return formatted;
 }
 
-const data = new Date();
-console.log(formatterData(data, 'YYYY/MM/DD'))
+export default formatterData;
+
+// const data = new Date();
+// console.log(formatterData(data, 'YYYY/MM/DD'))
