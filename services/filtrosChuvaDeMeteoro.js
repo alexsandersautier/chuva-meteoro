@@ -23,11 +23,12 @@ function filtroChuvaProximosMeses(chuva){
 
     dataInicial = validateCurrentMonth(dataInicial);
     dataFinal = validateCurrentMonth(dataFinal);
-   
-    console.log("dataAtual", dataAtual)
-    console.log("dataInicial", dataInicial)
-    console.log("data2Mese", data2Mese)
-    return dataAtual < dataInicial && dataInicial < data2Mese; 
+    
+    // console.log("dataAtual", dataAtual)
+    // console.log("dataInicial", dataInicial)
+    // console.log("data2Mese", data2Mese)
+    // console.log("")
+    return dataAtual.getMonth() < dataInicial.getMonth() && dataInicial.getMonth() <= data2Mese.getMonth(); 
 
 }
 
